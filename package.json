@@ -1,0 +1,43 @@
+{
+  "name": "sequiquis",
+  "version": "1.0.0",
+  "description": "Contains test suites and interfaces you can use to implement the various components of libp2p",
+  "license": "Apache-2.0 OR MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GarlandKohler/sequiquis.git"
+  },
+  "keywords": [
+    "interface",
+    "et"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "scripts": {
+    "reset": "lerna run clean && rimraf ./node_modules ./package-lock.json packages/*/node_modules packages/*/package-lock.json packages/*/dist",
+    "test": "lerna run --concurrency 1 test -- --",
+    "test:node": "lerna run --concurrency 1 test:node -- --",
+    "test:chrome": "lerna run --concurrency 1 test:chrome -- --",
+    "test:chrome-webworker": "lerna --concurrency 1 run test:chrome-webworker -- --",
+    "test:firefox": "lerna run --concurrency 1 test:firefox -- --",
+    "test:firefox-webworker": "lerna run --concurrency 1 test:firefox-webworker -- --",
+    "test:electron-main": "lerna run --concurrency 1 test:electron-main -- --",
+    "test:electron-renderer": "lerna run --concurrency 1 test:electron-renderer -- --",
+    "clean": "lerna run clean",
+    "generate": "lerna run generate",
+    "build": "lerna run build",
+    "lint": "lerna run lint",
+    "dep-check": "lerna run dep-check",
+    "release": "lerna run --concurrency 1 release -- --"
+  },
+  "dependencies": {
+    "lerna": "^6.0.1",
+    "rimraf": "^3.0.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "TreAnderson"
+}
